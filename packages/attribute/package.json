@@ -1,0 +1,27 @@
+{
+	"name": "@hyrbx/attribute",
+	"private": true,
+	"version": "0.0.1",
+	"description": "",
+	"main": "out/init.lua",
+	"scripts": {
+		"build": "rbxtsc",
+		"watch": "rbxtsc -w",
+		"test": "npm run test:build && npm run test:run",
+		"test:build": "npm run build && rojo build -o test.rbxl",
+		"test:run": "npx run-in-roblox-studio --place test.rbxl --script out/run.test.lua",
+		"prepublishOnly": "npm run build"
+	},
+	"license": "MIT",
+	"types": "out/index.d.ts",
+	"files": [
+		"out",
+		"!**/*.tsbuildinfo"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@rbxts/testez": "^0.4.2-ts.0"
+	}
+}

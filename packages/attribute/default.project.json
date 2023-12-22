@@ -1,0 +1,15 @@
+{
+	"name": "attribute-test",
+	"globIgnorePaths": ["**/package.json", "**/tsconfig.json"],
+	"emitLegacyScripts": false,
+	"tree": {
+		"$className": "DataModel",
+		"Workspace": {
+			"$className": "Workspace"
+		},
+		"ServerStorage": {
+			"$className": "ServerStorage",
+			"$path": "out"
+		}
+	}
+}
