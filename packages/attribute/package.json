@@ -5,17 +5,19 @@
 	"description": "",
 	"main": "out/init.lua",
 	"scripts": {
-		"build": "rbxtsc",
-		"watch": "rbxtsc -w",
+		"build": "rbxtsc --type game",
+		"watch": "pnpm run build --watch",
 		"test": "npm run test:build && npm run test:run",
 		"test:build": "npm run build && rojo build -o test.rbxl",
-		"test:run": "npx run-in-roblox-studio --place test.rbxl --script out/run.test.lua",
+		"test:run": "NODE_ENV=development run-in-roblox-studio --place test.rbxl --script out/test.server.lua",
 		"prepublishOnly": "npm run build"
 	},
 	"license": "MIT",
 	"types": "out/index.d.ts",
 	"files": [
 		"out",
+		"!**/*.spec.*",
+		"!**/test.*",
 		"!**/*.tsbuildinfo"
 	],
 	"publishConfig": {

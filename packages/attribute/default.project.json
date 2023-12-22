@@ -7,9 +7,36 @@
 		"Workspace": {
 			"$className": "Workspace"
 		},
+		"HttpService": {
+			"$className": "HttpService",
+			"$properties": {
+				"HttpEnabled": true
+			}
+		},
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"include": {
+				"$path": "include"
+			},
+			"node_modules": {
+				"$className": "Folder",
+				"@rbxts": {
+					"$path": "node_modules/@rbxts"
+				}
+			}
+		},
 		"ServerStorage": {
 			"$className": "ServerStorage",
-			"$path": "out"
+			"$path": "out",
+			"PluginConfig": {
+				"$className": "Folder",
+				"run-in-roblox-studio": {
+					"$className": "Configuration",
+					"$attributes": {
+						"debugMode": true
+					}
+				}
+			}
 		}
 	}
 }

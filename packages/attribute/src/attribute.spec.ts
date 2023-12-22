@@ -7,7 +7,7 @@ type Equal<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y ?
 import { createAttribute } from './attribute';
 
 export = () => {
-	it('should pass get and set attribute', () => {
+	it('should get attribute correctly', () => {
 		const part = new Instance('Part');
 
 		const attribute = createAttribute<{
@@ -16,10 +16,20 @@ export = () => {
 		}>(part);
 
 		expect(attribute.get('stringAttr')).to.equal(undefined);
+		expect(attribute.get('numberAttr')).to.equal(undefined);
+	});
+
+	it('should set attribute correctly', () => {
+		const part = new Instance('Part');
+
+		const attribute = createAttribute<{
+			numberAttr: number;
+			stringAttr: string;
+		}>(part);
+
 		attribute.set('stringAttr', 'test');
 		expect(attribute.get('stringAttr')).to.equal('test');
 
-		expect(attribute.get('numberAttr')).to.equal(undefined);
 		attribute.set('numberAttr', 1);
 		expect(attribute.get('numberAttr')).to.equal(1);
 	});
@@ -42,5 +52,8 @@ export = () => {
 		type _Test2 = Expect<Equal<ShouldOnlyAcceptValidValueType<typeof attribute.set, 'stringAttr', 0>, false>>;
 		type _Test3 = Expect<Equal<ShouldOnlyAcceptValidValueType<typeof attribute.set, 'numberAttr', 'test'>, false>>;
 		type _Test4 = Expect<Equal<ShouldOnlyAcceptValidValueType<typeof attribute.set, 'numberAttr', 0>, true>>;
+
+		// Don't care about the value, just that it compiles
+		expect(attribute).to.be.ok();
 	});
 };
