@@ -1,13 +1,22 @@
 {
-	"name": "hyrbx-attribute",
+	"name": "hyrbx-test",
 	"globIgnorePaths": ["**/package.json", "**/tsconfig.json"],
 	"emitLegacyScripts": false,
 	"tree": {
 		"$className": "DataModel",
+		"Workspace": {
+			"$className": "Workspace"
+		},
+		"HttpService": {
+			"$className": "HttpService",
+			"$properties": {
+				"HttpEnabled": true
+			}
+		},
 		"ReplicatedStorage": {
 			"$className": "ReplicatedStorage",
 			"include": {
-				"$path": "include"
+				"$path": "node_modules/roblox-ts/include"
 			},
 			"node_modules": {
 				"$className": "Folder",
@@ -21,7 +30,16 @@
 			"packages": {
 				"$className": "Folder",
 				"attribute": {
-					"$path": "out"
+					"$path": "packages/attribute/out"
+				}
+			},
+			"PluginConfig": {
+				"$className": "Folder",
+				"run-in-roblox-studio": {
+					"$className": "Configuration",
+					"$attributes": {
+						"debugMode": true
+					}
 				}
 			}
 		}

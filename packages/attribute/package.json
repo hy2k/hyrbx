@@ -1,18 +1,8 @@
 {
 	"name": "@hyrbx/attribute",
-	"private": true,
 	"version": "0.0.1",
-	"description": "",
-	"main": "out/init.lua",
-	"scripts": {
-		"build": "rbxtsc --type game",
-		"watch": "pnpm run build --watch",
-		"test": "npm run test:build && npm run test:run",
-		"test:build": "npm run build && rojo build -o test.rbxl",
-		"test:run": "NODE_ENV=development run-in-roblox-studio --place test.rbxl --script out/test.server.lua",
-		"prepublishOnly": "npm run build"
-	},
-	"license": "MIT",
+	"description": "Attribute util for Roblox-TS",
+	"main": "out/attribute.lua",
 	"types": "out/index.d.ts",
 	"files": [
 		"out",
@@ -20,10 +10,20 @@
 		"!**/test.*",
 		"!**/*.tsbuildinfo"
 	],
+	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
 	},
+	"scripts": {
+		"build": "pnpm run clean && rbxtsc --type package",
+		"clean": "rimraf out",
+		"watch": "pnpm run build --watch",
+		"test": "pnpm run test:build && npm run test:run",
+		"test:build": "rbxtsc --type game && pnpm -w build:place",
+		"test:run": "NODE_ENV=development run-in-roblox-studio --place ../../test.rbxl --script out/test.server.lua",
+		"prepublishOnly": "pnpm run build"
+	},
 	"devDependencies": {
-		"@rbxts/testez": "^0.4.2-ts.0"
+		"@rbxts/testez": "0.4.2-ts.0"
 	}
 }

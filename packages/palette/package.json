@@ -1,0 +1,21 @@
+{
+	"name": "@hyrbx/palette",
+	"version": "0.0.1",
+	"description": "TailwindCSS color palettes for Roblox-TS",
+	"main": "out/palette.lua",
+	"types": "out/index.d.ts",
+	"files": [
+		"out",
+		"!**/*.spec.*",
+		"!**/*.tsbuildinfo"
+	],
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "rbxtsc",
+		"watch": "pnpm run build --watch",
+		"prepublishOnly": "pnpm run build"
+	}
+}
