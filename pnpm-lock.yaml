@@ -15,8 +15,8 @@ importers:
         specifier: 0.4.2-ts.0
         version: 0.4.2-ts.0
       '@rbxts/types':
-        specifier: ^1.0.737
-        version: 1.0.737
+        specifier: ^1.0.738
+        version: 1.0.738
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
@@ -36,8 +36,8 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0
       run-in-roblox-studio:
-        specifier: ^0.1.2
-        version: 0.1.2
+        specifier: ^0.1.4
+        version: 0.1.4
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -184,8 +184,8 @@ packages:
     resolution: {integrity: sha512-8Q+OG9ddTD2P3aARCuRKpPqUBvuifgSnHvQMZ6jBMqUzxhIysnb0l4c3vnnaQnvdyZ1OW9tKxcdEHMGTb67uOw==}
     dev: true
 
-  /@rbxts/types@1.0.737:
-    resolution: {integrity: sha512-qoap8d2/oGczr2jMGfuj2SRThKbXQwFOCdJHeIs232whLcdDjPr7KowRagq4so8n/PrnDc5ep+fMuIZ1nr6Odg==}
+  /@rbxts/types@1.0.738:
+    resolution: {integrity: sha512-3DXmizqp7sY+yQ0CUmifwEddngXjgQHM7k9CaYxeNvYzLa2XIhPVfs1DnmNf8dsv8I7UMTzV5QV/co3yeIVDTA==}
     dev: true
 
   /@roblox-ts/luau-ast@1.0.10:
@@ -1217,8 +1217,8 @@ packages:
     resolution: {integrity: sha512-eel5UKGn369gGEWOqBShmFJWfq/xSJvsgDzgLYC845GneayWvXBf0lJCBn5qTABfewy1ZDPoaR5OZCP+kssfuw==}
     dev: true
 
-  /fastify@4.25.1:
-    resolution: {integrity: sha512-D8d0rv61TwqoAS7lom2tvIlgVMlx88lLsiwXyWNjA7CU/LC/mx/Gp2WAlC0S/ABq19U+y/aRvYFG5xLUu2aMrg==}
+  /fastify@4.25.2:
+    resolution: {integrity: sha512-SywRouGleDHvRh054onj+lEZnbC1sBCLkR0UY3oyJwjD4BdZJUrxBqfkfCaqn74pVCwBaRHGuL3nEWeHbHzAfw==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.4.1
@@ -1925,12 +1925,12 @@ packages:
       wrappy: 1.0.2
     dev: true
 
-  /open-rbxl@0.0.4:
-    resolution: {integrity: sha512-OOxs6jU6dbaihnsrc5M8fNqk2AHMZ60KugvnN8f0LOPjQvl0Sq+WaSDjAaGR9NM1CkngiWp76gNL9kGUB0hF9A==}
+  /open-rbxl@0.0.5:
+    resolution: {integrity: sha512-eJWB0gzGwN/UdMNqxJ+0B/uqJX/tA11WHStj/Sf3DVuMA7usW31+gbh0OSC+Fa+cOcrGns8uUrtJsZQ4YSpOKw==}
     hasBin: true
     dependencies:
       cleye: 1.3.2
-      roblox-studio-pathutil: 0.0.3
+      roblox-studio-pathutil: 0.0.4
     dev: true
 
   /optionator@0.9.3:
@@ -2196,8 +2196,8 @@ packages:
       glob: 10.3.10
     dev: true
 
-  /roblox-studio-pathutil@0.0.3:
-    resolution: {integrity: sha512-n1/yRMcjGD7s/wYGtzKUn5kZ/sqW26n4FWo5YbKb0XVMWyOdWlFfnGhIrKLjqQt9j1zUdNrllfa5RHvz70r74g==}
+  /roblox-studio-pathutil@0.0.4:
+    resolution: {integrity: sha512-7dzURKLckpJFTVLA2auCfRp0RCZbZLYyW88jtn2YYLivjxnDg2BdOMh8xbJR0SpnTzLoN3Jt9WO4IrKGsjgKeQ==}
     dependencies:
       is-wsl: 3.1.0
     dev: true
@@ -2218,15 +2218,15 @@ packages:
       yargs: 17.7.2
     dev: true
 
-  /run-in-roblox-studio@0.1.2:
-    resolution: {integrity: sha512-ZrzQDKLEDlV09Dg8UrboDuFomZ7AIY9rSkqKGqcbE2mWb4x4uU+7KThAMcL407lrZBbDTh/MqcmUFijPmITD3w==}
+  /run-in-roblox-studio@0.1.4:
+    resolution: {integrity: sha512-SeiMrGCr6A4v8AKyBsBQcnkT6XOt31cLna4CVLoo7F6rZTIT/0Akmonc1QzLE9SsoS78SMhFxO+/ugPYipXTbQ==}
     hasBin: true
     dependencies:
       cleye: 1.3.2
-      fastify: 4.25.1
-      open-rbxl: 0.0.4
+      fastify: 4.25.2
+      open-rbxl: 0.0.5
       pino: 8.17.1
-      roblox-studio-pathutil: 0.0.3
+      roblox-studio-pathutil: 0.0.4
     transitivePeerDependencies:
       - supports-color
     dev: true
