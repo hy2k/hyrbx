@@ -1,8 +1,8 @@
 {
 	"name": "@hyrbx/attribute",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Attribute util for Roblox-TS",
-	"main": "out/attribute.lua",
+	"main": "out/init.lua",
 	"types": "out/index.d.ts",
 	"files": [
 		"out",
@@ -21,7 +21,7 @@
 		"test": "pnpm run test:build && npm run test:run",
 		"test:build": "rbxtsc --type game && pnpm -w build:place",
 		"test:run": "NODE_ENV=development run-in-roblox-studio --place ../../test.rbxl --script out/test.server.lua",
-		"prepublishOnly": "pnpm run build"
+		"prepack": "pnpm run build"
 	},
 	"devDependencies": {
 		"@rbxts/testez": "0.4.2-ts.0"
