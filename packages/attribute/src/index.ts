@@ -1,4 +1,6 @@
-export function createAttribute<T extends { [K in keyof T]: AttributeValue }>(instance: Instance) {
+export function createAttribute<T extends { [K in keyof T]: AttributeValue }, U extends Instance = Instance>(
+	instance: U,
+) {
 	return {
 		get: <Key extends keyof T & string>(key: Key) => {
 			return instance.GetAttribute(key) as T[Key] | undefined;

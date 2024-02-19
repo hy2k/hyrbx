@@ -56,4 +56,36 @@ export = () => {
 		// Don't care about the value, just that it compiles
 		expect(attribute).to.be.ok();
 	});
+
+	it('should only accept valid instance type', () => {
+		type ShouldOnlyAcceptModel<T> = Parameters<
+			typeof createAttribute<
+				{
+					value: string;
+				},
+				Model
+			>
+		>[0] extends T
+			? true
+			: false;
+
+		type _Test1 = Expect<Equal<ShouldOnlyAcceptModel<Model>, true>>;
+		type _Test2 = Expect<Equal<ShouldOnlyAcceptModel<Part>, false>>;
+
+		type ShouldOnlyAcceptPlayer<T> = Parameters<
+			typeof createAttribute<
+				{
+					value: string;
+				},
+				Player
+			>
+		>[0] extends T
+			? true
+			: false;
+
+		type _Test3 = Expect<Equal<ShouldOnlyAcceptPlayer<Player>, true>>;
+		type _Test4 = Expect<Equal<ShouldOnlyAcceptPlayer<Model>, false>>;
+
+		expect(true).to.be.ok();
+	});
 };
