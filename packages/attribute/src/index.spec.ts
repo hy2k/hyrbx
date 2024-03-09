@@ -88,4 +88,18 @@ export = () => {
 
 		expect(true).to.be.ok();
 	});
+
+	it('should remove attribute by key', () => {
+		const part = new Instance('Part');
+
+		const attribute = createAttribute<{
+			foo: string;
+		}>(part);
+
+		attribute.set('foo', 'bar');
+		expect(attribute.get('foo')).to.equal('bar');
+
+		attribute.remove('foo');
+		expect(attribute.get('foo')).to.equal(undefined);
+	});
 };
