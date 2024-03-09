@@ -1,6 +1,6 @@
 {
 	"name": "@hyrbx/attribute",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Attribute util for Roblox-TS",
 	"main": "out/init.lua",
 	"types": "out/index.d.ts",
