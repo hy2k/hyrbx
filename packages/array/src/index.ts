@@ -1,5 +1,5 @@
 /**
- * Shuffle the array in place.
+ * Shuffle the array in-place.
  */
 export function shuffle<T>(array: T[]): void {
 	for (let currentIndex = array.size() - 1; currentIndex > 0; currentIndex--) {
