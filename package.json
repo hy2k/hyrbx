@@ -6,9 +6,7 @@
 	"scripts": {
 		"lint": "eslint --cache .",
 		"fix": "pnpm run lint --fix",
-		"format": "prettier --write .",
-		"build:place": "rojo build -o test.rbxl",
-		"serve:place": "rojo serve"
+		"format": "prettier --write ."
 	},
 	"license": "MIT",
 	"devDependencies": {

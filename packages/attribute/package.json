@@ -15,12 +15,12 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "pnpm run clean && rbxtsc --type package",
-		"clean": "rimraf out",
+		"compile": "rimraf out && rbxtsc --verbose",
+		"build": "pnpm run compile --type package",
 		"watch": "pnpm run build --watch",
-		"test": "pnpm run test:build && npm run test:run",
-		"test:build": "rbxtsc --type game && pnpm -w build:place",
-		"test:run": "NODE_ENV=development run-in-roblox-studio --place ../../test.rbxl --script out/test.server.lua",
+		"test": "pnpm run test:build && pnpm test:run",
+		"test:build": "pnpm run compile --type game && rojo build -o test.rbxl",
+		"test:run": "NODE_ENV=development run-in-roblox-studio --place test.rbxl --script out/test.server.lua",
 		"prepack": "pnpm run build"
 	},
 	"devDependencies": {

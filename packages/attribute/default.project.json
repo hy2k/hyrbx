@@ -18,11 +18,8 @@
 		},
 		"ServerStorage": {
 			"$className": "ServerStorage",
-			"packages": {
-				"$className": "Folder",
-				"attribute": {
-					"$path": "out"
-				}
+			"TS": {
+				"$path": "out"
 			}
 		}
 	}

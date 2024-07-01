@@ -15,7 +15,8 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "rbxtsc",
+		"compile": "rimraf out && rbxtsc --verbose",
+		"build": "pnpm run compile --type package",
 		"watch": "pnpm run build --watch",
 		"prepack": "pnpm run build"
 	}
