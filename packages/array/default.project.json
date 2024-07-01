@@ -1,0 +1,26 @@
+{
+	"name": "hyrbx-array",
+	"globIgnorePaths": ["**/package.json", "**/tsconfig.json"],
+	"emitLegacyScripts": false,
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"include": {
+				"$path": "include"
+			},
+			"node_modules": {
+				"$className": "Folder",
+				"@rbxts": {
+					"$path": "node_modules/@rbxts"
+				}
+			}
+		},
+		"ServerStorage": {
+			"$className": "ServerStorage",
+			"TS": {
+				"$path": "out"
+			}
+		}
+	}
+}

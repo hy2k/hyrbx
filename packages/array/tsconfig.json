@@ -1,0 +1,12 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"typeRoots": ["node_modules/@rbxts", "../../node_modules/@rbxts"],
+		"rootDir": "src",
+		"outDir": "out",
+
+		// Force clean build by removing outDir when switching rbxtsc projectType between "game" and
+		// "package"
+		"tsBuildInfoFile": "out/tsconfig.tsbuildinfo"
+	}
+}

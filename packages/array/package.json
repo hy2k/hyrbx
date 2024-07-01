@@ -1,0 +1,29 @@
+{
+	"name": "@hyrbx/array",
+	"version": "0.0.1",
+	"description": "Array utilities for Roblox-TS",
+	"main": "out/init.lua",
+	"types": "out/index.d.ts",
+	"files": [
+		"out",
+		"!**/*.spec.*",
+		"!**/test.*",
+		"!**/*.tsbuildinfo"
+	],
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"compile": "rimraf out && rbxtsc --verbose",
+		"build": "pnpm run compile --type package",
+		"watch": "pnpm run build --watch",
+		"test": "pnpm run test:build && pnpm test:run",
+		"test:build": "pnpm run compile --type game && rojo build -o test.rbxl",
+		"test:run": "NODE_ENV=development run-in-roblox-studio --place test.rbxl --script out/test.server.lua",
+		"prepack": "pnpm run build"
+	},
+	"devDependencies": {
+		"@rbxts/testez": "0.4.2-ts.0"
+	}
+}

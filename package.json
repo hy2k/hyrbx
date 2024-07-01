@@ -16,7 +16,7 @@
 		"@rbxts/testez": "0.4.2-ts.0",
 		"@rbxts/types": "^1.0.787",
 		"eslint": "^8.57.0",
-		"eslint-config-y2": "^0.4.0",
+		"eslint-config-y2": "^0.4.1",
 		"pino-pretty": "^11.2.1",
 		"prettier": "^3.3.2",
 		"rimraf": "^5.0.7",
