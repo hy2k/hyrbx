@@ -6,7 +6,7 @@ type Equal<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y ?
 
 import { createAttribute } from './index';
 
-export = () => {
+export = (): void => {
 	it('should get attribute correctly', () => {
 		const part = new Instance('Part');
 

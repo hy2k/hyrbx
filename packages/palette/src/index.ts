@@ -1,21 +1,25 @@
-import type { ColorMap } from './colors';
+import type { PaletteShadeHexMap } from './colors';
 
-import { colors } from './colors';
+import { PaletteColorScheme } from './colors';
 
-type Shade = keyof ColorMap;
+type PaletteShade = keyof PaletteShadeHexMap;
 
-type ColorName = keyof typeof colors;
+type PaletteColorName = keyof typeof PaletteColorScheme;
 
-type BW = Extract<ColorName, 'black' | 'white'>;
+type NoShadeColorName = Extract<PaletteColorName, 'black' | 'white'>;
 
-type ColorShade = `${Exclude<ColorName, BW>}_${Shade}` | BW;
+type PalleteColorId = `${Exclude<PaletteColorName, NoShadeColorName>}_${PaletteShade}` | NoShadeColorName;
 
-function generatePalette() {
+type Pallete = {
+	readonly [Id in PalleteColorId]: Color3;
+};
+
+function generatePalette(): Pallete {
 	const palette: {
 		[name: string]: Color3;
 	} = {};
 
-	for (const [name, color] of pairs(colors)) {
+	for (const [name, color] of pairs(PaletteColorScheme)) {
 		if (typeIs(color, 'string')) {
 			palette[name] = Color3.fromHex(color);
 		} else {
@@ -25,9 +29,7 @@ function generatePalette() {
 		}
 	}
 
-	return palette as {
-		readonly [name in ColorShade]: Color3;
-	};
+	return palette as Pallete;
 }
 
 export const palette = generatePalette();

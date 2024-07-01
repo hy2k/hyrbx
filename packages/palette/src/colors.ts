@@ -1,7 +1,7 @@
 // Colors from Tailwind CSS
 // https://github.com/tailwindlabs/tailwindcss/blob/5582f0bd41241af3718b17491489fb81b1022ac6/src/public/colors.js#L16-L301
 
-export interface ColorMap {
+export interface PaletteShadeHexMap {
 	50: string;
 	100: string;
 	200: string;
@@ -15,7 +15,7 @@ export interface ColorMap {
 	950: string;
 }
 
-export const colors = {
+export const PaletteColorScheme = table.freeze({
 	amber: {
 		50: '#fffbeb',
 		100: '#fef3c7',
@@ -305,5 +305,5 @@ export const colors = {
 		950: '#09090b',
 	},
 } satisfies {
-	[name: string]: ColorMap | string;
-};
+	[colorName: string]: PaletteShadeHexMap | string;
+});
